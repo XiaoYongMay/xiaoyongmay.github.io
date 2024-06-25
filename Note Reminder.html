@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Reminder</title>
+<style>
+
+.biaoti{
+    font-size: 50px;
+    text-align: center;
+    margin-top: auto;
+    font-family: 'Courier New', Courier, monospace;
+}
+.input{
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.search-box{
+    border: 3px solid black;
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+#Searchbutton{
+    margin-left: 20px;
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    border: 2px solid blue;
+    border-radius: 10px;
+}
+.ti{
+    display: flex;
+    justify-content: space-between;
+}
+.Left-search{
+    display: flex;
+    margin: 5%;
+    border: 3px solid black;
+    width: 50%;
+    height: 500px;  
+    flex-direction: column;
+    padding: 10px;
+    overflow: scroll;
+}
+#Savebutton{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    height: 30px;
+    width: 100px;
+    padding: 0;
+    margin-top: 16px;
+    
+    
+}
+.add{
+
+    margin: 15px;
+    border: 3px solid black;
+    width: 50%;
+    height: 25px;
+   
+}
+.schedule{
+    display: flex;
+    color: black;
+}
+ul{
+    width: 100%;
+}
+.schedule li {
+    border: 3px solid black;
+    padding: 10px;
+    background-color:rgb(232, 178, 139);
+    margin-bottom: 3px;
+}
+.schedule-content{
+    display: flex;
+    justify-content: space-around;
+}
+.left-button{
+    display: flex;
+    justify-content: end;
+}
+.Yes{
+    border-radius: 100px;      
+}
+.No{
+    border-radius: 100px;
+}
+.Right-search{
+    display: flex;
+    margin: 5%;
+    border: 3px solid black;
+    width: 50%;
+    height: 500px;  
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+    overflow: scroll;
+}
+</style>
+
+</head>
+<body>
+    <div>
+        <div class="biaoti">
+            <p>Note Reminder</p>
+        </div>
+
+        <div class="input">
+
+            <input type="text" id="search-box" onkeyup="refresh(this)" placeholder="type something to search..." class="search-box"/>
+
+            <button id="Searchbutton"  onclick="searchElement(this)" > Search</button>
+
+       
+        </div>
+
+        <div class="ti">
+
+        
+            <div class="Left-search">
+                <div style="display: flex;">
+                    <input type="text" class="add" id="add-todo"/> 
+                    <button id="Savebutton" onclick="addTodo(this)">
+                        Save
+                    </button>
+                 </div>
+                <div class="schedule">
+                    <ul id="list-todo">
+                            
+                    </ul>
+                    
+                </div>
+            </div>  
+           
+
+            <div class="Right-search" >
+                <div>
+                    <p>Actions Completed</p>
+                </div>
+                    <div class="schedule">
+                        <ul id="finish-todo">
+
+                        </ul>
+                    
+                    </div>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>
